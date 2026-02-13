@@ -1,0 +1,15 @@
+.obsidian
+
+# 忽略Obsidian笔记软件的导出检查点文件
+**/.export_checkpoint.json
+
+# 忽略IDE和系统文件
+.vscode/
+
+# 忽略所有用户本地的Claude Code配置
+.claude/settings.local.json
+
+
+
+
+
