@@ -1,10 +1,31 @@
-# Wiki Log
+# Wiki 日志
 
-Append-only chronological log for ingests, queries, and health checks.
+这里按时间追加记录摄入、查询、健康检查和结构维护。标题保持统一格式，便于用 `rg "^## \\[" wiki/log.md` 检索。
 
-## [2026-05-04] init | Personal LLM Wiki scaffold
+## [2026-05-04] 初始化 | 个人 LLM Wiki 骨架
 
-- Initialized LLM Wiki directory structure.
-- Added `CLAUDE.md` and `AGENT.md` schema files.
-- Added starter index, overview, page templates, and health check template.
+- 初始化 LLM Wiki 目录结构。
+- 新增 `CLAUDE.md` 和 `AGENT.md` schema 文件。
+- 新增初始索引、总览、页面模板和健康检查模板。
+
+## [2026-05-04] 摄入 | 计算机图书馆藏
+
+- 对 `计算机图书/` 完成目录级摄入。
+- 新增 `wiki/sources/计算机图书馆藏.md`。
+- 新增 `wiki/concepts/计算机图书.md`。
+- 新增 `wiki/syntheses/计算机图书学习路线.md`。
+- 更新 schema，使其识别顶层来源目录。
+
+## [2026-05-04] 健康检查 | 计算机图书目录级摄入
+
+- 确认 `计算机图书/` 排除 `.DS_Store` 后包含 202 个可摄入文件。
+- 使用本地 `pypdf` 统计到 187 个可读取 PDF，共 74,263 页。
+- 新增 `wiki/health/2026-05-04-health-check.md`。
+
+## [2026-05-04] 健康检查 | 仓库结构与中文化
+
+- 确认当前仓库没有 `raw/` 目录，来源资料位于顶层分类目录。
+- 将 `CLAUDE.md` 和 `AGENT.md` 改为中文 schema。
+- 将主要 wiki 页面、模板和健康检查内容改为中文。
+- 新增 `wiki/health/2026-05-04-structure-check.md`。
 

@@ -5,26 +5,26 @@ created: YYYY-MM-DD
 updated: YYYY-MM-DD
 sources: []
 tags:
-  - topic/example
+  - 主题/示例
 ---
 
-# Concept Name
+# 概念名称
 
-## Summary
-
-
-## Why It Matters
+## 概要
 
 
-## Key Claims
+## 为什么重要
 
 
-## Related Pages
+## 关键判断
 
 
-## Source Notes
+## 相关页面
 
 
-## Open Questions
+## 来源说明
+
+
+## 待解决问题
 
 

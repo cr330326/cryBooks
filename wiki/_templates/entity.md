@@ -5,23 +5,23 @@ created: YYYY-MM-DD
 updated: YYYY-MM-DD
 sources: []
 tags:
-  - topic/example
+  - 主题/示例
 ---
 
-# Entity Name
+# 实体名称
 
-## Summary
-
-
-## Role In The Wiki
+## 概要
 
 
-## Key Facts
+## 在 Wiki 中的角色
 
 
-## Related Pages
+## 关键事实
 
 
-## Source Notes
+## 相关页面
+
+
+## 来源说明
 
 

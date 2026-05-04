@@ -1,44 +1,45 @@
-# Wiki Index
+# Wiki 索引
 
-This is the content-oriented catalog for the personal LLM Wiki. Read this first before answering questions or ingesting related material.
+这是个人 LLM Wiki 的内容索引和主导航。回答问题或摄入新资料前，先读这里。
 
-## Start Here
+## 从这里开始
 
-- [[00-overview]] - High-level map of the knowledge base and current learning directions.
+- [[00-overview]] - 知识库当前结构、状态和维护方向。
 
-## Sources
+## 来源
 
-No sources have been ingested into the wiki yet.
+- [[计算机图书馆藏]] - `计算机图书/` 的目录级摄入结果，覆盖 202 个文件、主题分类和格式统计。
 
-## Works
+## 作品
 
-No work pages yet.
+暂无作品页。
 
-## Concepts
+## 概念
 
-No concept pages yet.
+- [[计算机图书]] - 计算机图书馆藏的知识簇、主题地图和后续摄入方向。
 
-## Entities
+## 实体
 
-No entity pages yet.
+暂无实体页。
 
-## People
+## 人物
 
-No people pages yet.
+暂无人物页。
 
-## Questions
+## 问题
 
-No filed query answers yet.
+暂无沉淀的问题回答。
 
-## Syntheses
+## 综合
 
-No cross-source synthesis pages yet.
+- [[计算机图书学习路线]] - 从本地计算机图书馆藏综合出的分阶段学习路线。
 
-## Contradictions
+## 矛盾
 
-No contradiction records yet.
+暂无矛盾记录。
 
-## Health
+## 健康检查
 
-No health checks yet.
+- [[2026-05-04-health-check]] - `计算机图书/` 目录级摄入后的初始健康检查。
+- [[2026-05-04-structure-check]] - 删除 `raw/` 后的仓库结构检查和中文化维护记录。
 

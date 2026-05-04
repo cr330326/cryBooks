@@ -4,35 +4,35 @@ status: draft
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
 sources:
-  - raw/path/to/source
+  - 来源路径
 tags:
-  - topic/example
+  - 主题/示例
 ---
 
-# Source Title
+# 来源标题
 
-## Source
+## 来源
 
-- Raw path:
-- Author:
-- Date:
-- Format:
+- 路径：
+- 作者：
+- 日期：
+- 格式：
 
-## One-Line Summary
-
-
-## Key Ideas
+## 一句话总结
 
 
-## Useful Details
+## 关键观点
 
 
-## Links To Update
+## 有用细节
 
 
-## Contradictions Or Tensions
+## 需要更新的链接
 
 
-## Open Questions
+## 矛盾或张力
+
+
+## 待解决问题
 
 

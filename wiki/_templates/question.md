@@ -5,23 +5,23 @@ created: YYYY-MM-DD
 updated: YYYY-MM-DD
 sources: []
 tags:
-  - topic/example
+  - 主题/示例
 ---
 
-# Question
+# 问题
 
-## Short Answer
-
-
-## Evidence
+## 简短回答
 
 
-## Synthesis
+## 证据
 
 
-## Caveats
+## 综合分析
 
 
-## Follow-Up Questions
+## 限制和 caveat
+
+
+## 后续问题
 
 

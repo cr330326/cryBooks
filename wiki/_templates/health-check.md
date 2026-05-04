@@ -10,20 +10,20 @@ tags:
   - meta/health
 ---
 
-# YYYY-MM-DD Health Check
+# YYYY-MM-DD 健康检查
 
-## Scope
-
-
-## Findings
+## 范围
 
 
-## Fixes Applied
+## 发现
 
 
-## Suggested Fixes Requiring Approval
+## 已应用修复
 
 
-## New Questions Or Source Gaps
+## 需要确认后再做的修复
+
+
+## 新问题或来源缺口
 
 

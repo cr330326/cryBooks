@@ -5,34 +5,35 @@ created: 2026-05-04
 updated: 2026-05-04
 sources:
   - llm-wiki.md
+  - 计算机图书/
 tags:
   - meta/wiki
 ---
 
-# Reading Knowledge Base Overview
+# 阅读知识库总览
 
-This wiki is the maintained knowledge layer for the reading collection in `raw/`.
+这个 wiki 是本仓库的知识层，用来把顶层来源目录中的书籍、论文、报告、文章和笔记，逐步整理成一个可链接、可查询、可持续积累的 Markdown 知识库。
 
-The current goal is to turn books, papers, reports, articles, and notes into a persistent, interlinked Markdown wiki. Raw files remain immutable. The agent gradually builds source summaries, concept pages, entity pages, people pages, work pages, question answers, and cross-source syntheses.
+当前仓库没有 `raw/` 目录。来源资料直接存放在顶层分类目录中，例如 `计算机图书/`、`AI/`、`论文/`、`经济/`、`数学/`、`文章合集/`、`名人/`、`其它/`、`图片/`、`效能/`。
 
-## Current Structure
+## 当前结构
 
-- `raw/` stores source material.
-- `raw/_inbox/` stores new material waiting for ingest.
-- `wiki/sources/` stores one page per ingested source.
-- `wiki/concepts/`, `wiki/entities/`, `wiki/people/`, and `wiki/works/` store reusable knowledge pages.
-- `wiki/questions/` stores durable answers to user questions.
-- `wiki/syntheses/` stores cross-source analysis.
-- `wiki/contradictions/` tracks conflicting claims.
-- `wiki/health/` stores maintenance reports.
+- 顶层分类目录保存原始来源资料，agent 默认只读。
+- `wiki/sources/` 保存已摄入来源的页面。
+- `wiki/concepts/`、`wiki/entities/`、`wiki/people/`、`wiki/works/` 保存可复用知识页。
+- `wiki/questions/` 保存值得长期保留的问题回答。
+- `wiki/syntheses/` 保存跨来源综合分析。
+- `wiki/contradictions/` 记录互相冲突或待裁决的说法。
+- `wiki/health/` 保存健康检查和维护报告。
+- `wiki/_templates/` 保存页面模板。
 
-## Current Status
+## 当前状态
 
-The wiki scaffold exists, but no raw source has been fully ingested yet.
+`计算机图书/` 已完成目录级摄入，形成了馆藏索引、知识簇总览和学习路线。单本书还没有逐本全文摄入，因此具体书籍观点仍需要后续抽取、摘要和引用校验。
 
-## Good First Ingests
+## 推荐下一步
 
-- A single Markdown article from `raw/AI/Article/`.
-- A single AI report or paper from `raw/AI/报告/` or `raw/论文/`.
-- One book chapter or extracted note from a larger book.
+- 从 `AI/Article/` 摄入一篇 Markdown 技术文章。
+- 从 `AI/报告/` 或 `论文/` 摄入一份 AI 报告或论文。
+- 从 `计算机图书/` 的优先队列中选择一本书做深度摄入。
 

@@ -1,44 +1,57 @@
-# Personal LLM Wiki Schema
+# 个人 LLM Wiki 维护规范
 
-This repository is a personal reading knowledge base based on Andrej Karpathy's LLM Wiki pattern. The agent maintains a persistent, interlinked Markdown wiki from immutable raw sources.
+本仓库是一个基于 Andrej Karpathy “LLM Wiki” 方法搭建的个人阅读知识库。Agent 的职责是把不可变的来源资料，逐步整理成一个持续积累、互相链接、可查询的 Markdown wiki。
 
-## Operating Principles
+## 核心原则
 
-- Treat `raw/` as source of truth. Read from it, never rewrite, rename, delete, or annotate raw files unless the user explicitly asks.
-- Treat `wiki/` as the maintained knowledge layer. The agent may create and edit wiki pages, indexes, logs, templates, and health reports.
-- Prefer durable wiki updates over one-off chat answers. If a query produces reusable synthesis, offer to file it under `wiki/questions/` or `wiki/syntheses/`.
-- Every factual claim in the wiki should point back to at least one source page or raw source path.
-- Preserve uncertainty. Mark weak evidence, contradictions, stale claims, and open questions explicitly.
-- Use Obsidian-style links: `[[Page Name]]`. Use relative Markdown links for files outside normal wiki pages, especially raw source paths.
-- Keep filenames readable and stable. Use Chinese titles when the source/domain is Chinese; avoid renaming established pages without user approval.
+- 把顶层来源目录视为事实来源。目前仓库没有 `raw/` 目录，来源资料直接存放在 `计算机图书/`、`AI/`、`论文/`、`经济/`、`数学/`、`文章合集/`、`名人/`、`其它/`、`图片/`、`效能/` 等顶层目录中。
+- 读取来源目录可以；不要改名、移动、删除、重写或标注来源文件，除非用户明确要求。
+- 把 `wiki/` 视为 agent 维护的知识层。Agent 可以创建和更新 wiki 页面、索引、日志、模板和健康检查报告。
+- 优先把有复用价值的回答沉淀进 wiki，而不是只停留在聊天记录里。
+- wiki 中的事实性判断应尽量指向来源页面或具体来源路径。
+- 保留不确定性。证据弱、互相矛盾、可能过期、仍待确认的内容，都要明确写出来。
+- wiki 页面之间使用 Obsidian 双链：`[[页面名]]`。引用来源文件时使用仓库相对路径。
+- 文件名保持清晰稳定。中文资料优先使用中文标题；不要随意重命名已有页面。
 
-## Directory Layout
+## 当前仓库结构
 
 ```text
-raw/
-  _inbox/        New sources waiting to be ingested.
-  assets/        Local images and attachments captured from sources.
-  ...            Existing curated books, reports, articles, papers.
+./
+  AGENT.md       Agent 快速入口。
+  CLAUDE.md      本维护规范。
+  README.md      仓库说明。
+  llm-wiki.md    Karpathy LLM Wiki 方法原文。
 
-wiki/
-  index.md       Content catalog and main navigation file.
-  log.md         Append-only chronological operation log.
-  00-overview.md Current high-level map of the knowledge base.
-  sources/       One page per ingested source.
-  concepts/      Concepts, ideas, theories, methods.
-  entities/      Organizations, products, systems, projects.
-  people/        Authors, researchers, historical figures.
-  works/         Books, papers, reports, courses, talks.
-  questions/     Filed answers to user questions.
-  syntheses/     Cross-source analysis, comparisons, arguments.
-  contradictions/ Explicit conflicts or disputed claims.
-  health/        Wiki lint and maintenance reports.
-  _templates/    Page templates and workflow scaffolds.
+  计算机图书/    计算机、软件工程、系统、架构、编程语言等书籍。
+  AI/            AI 文章、图书、报告、论文、PPT。
+  论文/          按主题归类的论文。
+  经济/          经济、金融、商业类资料。
+  数学/          数学类资料。
+  文章合集/      技术文章合集。
+  名人/          人物或作者相关资料。
+  其它/          其它主题资料。
+  图片/          图片素材或图示。
+  效能/          效能、学习、工作方法相关资料。
+
+  wiki/
+    index.md       内容索引和主导航。
+    log.md         追加式操作日志。
+    00-overview.md 当前知识库总览。
+    sources/       已摄入来源的页面。
+    concepts/      概念、方法、理论、主题页。
+    entities/      组织、产品、系统、项目页。
+    people/        作者、研究者、人物页。
+    works/         书、论文、报告、课程、演讲页。
+    questions/     可复用的问题回答。
+    syntheses/     跨来源综合分析、比较、论证。
+    contradictions/ 矛盾、冲突或争议记录。
+    health/        健康检查和维护报告。
+    _templates/    页面模板和工作流脚手架。
 ```
 
-## Page Frontmatter
+## 页面 Frontmatter
 
-Use YAML frontmatter for wiki pages when creating or substantially revising them:
+创建或大幅更新 wiki 页面时，使用 YAML frontmatter：
 
 ```yaml
 ---
@@ -47,77 +60,77 @@ status: seed|draft|reviewed|stale
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
 sources:
-  - raw/path/or/wiki/source-page.md
+  - 来源路径或 wiki 来源页
 tags:
-  - topic/example
+  - 主题/示例
 ---
 ```
 
-## Source Page Format
+## 来源页格式
 
-Each ingested source gets one page under `wiki/sources/` unless it is a major work that deserves a `wiki/works/` page plus chapter/source pages.
+每个已摄入来源通常在 `wiki/sources/` 下建立一个页面。大型作品可以同时建立 `wiki/works/` 作品页，并把章节或材料拆成多个来源页。
 
-Required sections:
+推荐章节：
 
-- `# Title`
-- `## Source`
-- `## One-Line Summary`
-- `## Key Ideas`
-- `## Useful Details`
-- `## Links To Update`
-- `## Contradictions Or Tensions`
-- `## Open Questions`
+- `# 标题`
+- `## 来源`
+- `## 一句话总结`
+- `## 关键观点`
+- `## 有用细节`
+- `## 需要更新的链接`
+- `## 矛盾或张力`
+- `## 待解决问题`
 
-## Ingest Workflow
+## 摄入工作流
 
-Use this when the user says to ingest, process, summarize into the wiki, or handle files in `raw/_inbox/`.
+当用户要求“摄入”“处理”“总结到 wiki”“更新知识库”或指定某个来源目录时，执行此流程。
 
-1. Identify source files and confirm scope if more than 5 sources are involved.
-2. Read/extract source content with the best available local tool. For binary files, extract text first; for images, inspect relevant images separately.
-3. Decide the wiki targets before editing: source page, related concepts, entities, people, works, syntheses, contradictions.
-4. Create or update the source page in `wiki/sources/`.
-5. Update existing topic pages touched by the source. Add new concept/entity/person/work pages only when the idea will likely recur.
-6. Add backlinks from new pages to related pages using `[[Page Name]]`.
-7. Record contradictions in the affected page and, if significant, create/update `wiki/contradictions/<slug>.md`.
-8. Update `wiki/index.md` with new or changed pages.
-9. Append to `wiki/log.md` using this parseable heading:
-   `## [YYYY-MM-DD] ingest | Source Title`
-10. End with a concise report: source processed, pages created, pages updated, uncertainties, and suggested next ingest/query.
+1. 识别来源文件和范围；如果超过 5 个来源且用户没有明确要求目录级摄入，先确认范围。
+2. 用当前可用的最佳本地工具读取或抽取内容。二进制文件先抽文本；图片按需单独查看。
+3. 编辑前先确定目标页面：来源页、相关概念页、实体页、人物页、作品页、综合页、矛盾页。
+4. 在 `wiki/sources/` 创建或更新来源页。
+5. 更新被该来源影响的已有主题页。只有当某个概念、实体、人物或作品后续会反复出现时，才新建独立页面。
+6. 用 `[[页面名]]` 为新增和更新页面补充双链。
+7. 如发现冲突，写入相关页面；重要冲突要创建或更新 `wiki/contradictions/`。
+8. 更新 `wiki/index.md`。
+9. 追加 `wiki/log.md`，标题格式保持可检索：
+   `## [YYYY-MM-DD] 摄入 | 来源标题`
+10. 结束时简要说明：处理了什么来源、新建了哪些页面、更新了哪些页面、还有哪些不确定点、下一步建议。
 
-## Query Workflow
+## 查询工作流
 
-Use this when the user asks a question against the knowledge base.
+当用户基于知识库提问时，执行此流程。
 
-1. Read `wiki/index.md` first.
-2. Search `wiki/` with `rg` for relevant names, phrases, and aliases.
-3. Read the most relevant wiki pages before raw files. Use raw files only to verify or deepen a claim.
-4. Answer with citations to wiki pages and raw source paths where useful.
-5. Distinguish established wiki synthesis from fresh inference made during this answer.
-6. If the answer is reusable, create or update a page in `wiki/questions/` or `wiki/syntheses/` after confirming or when the user asks to file it.
-7. Append a query entry to `wiki/log.md` when a durable page is created or important synthesis changes:
-   `## [YYYY-MM-DD] query | Question`
+1. 先读 `wiki/index.md`。
+2. 用 `rg` 在 `wiki/` 中搜索相关名称、关键词和别名。
+3. 优先读取相关 wiki 页面，再按需回到来源文件核验或补充。
+4. 回答时引用 wiki 页面和来源路径。
+5. 区分“wiki 中已有综合”和“本次回答的新推断”。
+6. 如果回答有长期价值，在用户要求或确认后，写入 `wiki/questions/` 或 `wiki/syntheses/`。
+7. 若创建了持久页面或改变了重要综合，追加日志：
+   `## [YYYY-MM-DD] 查询 | 问题`
 
-## Health Check Workflow
+## 健康检查工作流
 
-Use this when the user asks to lint, audit, check health, clean up, or maintain the wiki.
+当用户要求“检查结构”“健康检查”“清理”“维护”“审计 wiki”时，执行此流程。
 
-1. Read `wiki/index.md` and recent entries in `wiki/log.md`.
-2. Check for orphan wiki pages with few or no links.
-3. Check for pages missing frontmatter, source references, or update dates.
-4. Search for markers: `TODO`, `TBD`, `unclear`, `needs source`, `stale`, `contradiction`.
-5. Identify important repeated terms that lack pages.
-6. Identify contradictions, stale claims, duplicate pages, and broken links.
-7. Write a dated report under `wiki/health/YYYY-MM-DD-health-check.md`.
-8. Apply low-risk fixes directly: index updates, missing backlinks, obvious template/frontmatter repairs.
-9. Ask before broad rewrites, source interpretation changes, or page renames.
-10. Append a log entry:
-    `## [YYYY-MM-DD] health | Scope`
+1. 读取 `wiki/index.md` 和 `wiki/log.md` 的最近记录。
+2. 检查仓库顶层来源目录是否与本规范一致；确认不存在过期的 `raw/` 假设。
+3. 检查孤立 wiki 页面、缺少入链或出链的页面。
+4. 检查缺少 frontmatter、来源引用或更新时间的页面。
+5. 搜索标记：`TODO`、`TBD`、`待补充`、`待确认`、`needs source`、`stale`、`contradiction`、`矛盾`。
+6. 识别重要但尚无页面的高频概念。
+7. 识别矛盾、过期内容、重复页面和断链。
+8. 在 `wiki/health/YYYY-MM-DD-health-check.md` 写入报告。
+9. 可直接应用低风险修复：索引更新、缺失双链、明显的模板/frontmatter 修复。
+10. 大范围改写、来源解释变化、页面重命名之前先询问用户。
+11. 追加日志：
+    `## [YYYY-MM-DD] 健康检查 | 范围`
 
-## Quality Bar
+## 质量标准
 
-- A useful page is concise, linked, sourced, and easy to revise.
-- Prefer synthesis over extractive summaries, but never erase source nuance.
-- Do not over-page the wiki. Create pages for durable concepts, entities, people, works, and recurring questions.
-- Keep `wiki/index.md` useful at human scale: one-line summaries beat exhaustive metadata.
-- Keep `wiki/log.md` append-only. Correct mistakes in a new note instead of rewriting history.
-
+- 好页面应该简洁、有链接、有来源、容易继续更新。
+- 优先产出综合，而不是机械摘抄；但不要抹掉来源中的细节和限制。
+- 不要过度拆页。只为稳定复用的概念、实体、人物、作品和问题创建页面。
+- `wiki/index.md` 要适合人快速浏览：一句话摘要比堆满元数据更有用。
+- `wiki/log.md` 保持追加式记录。若之前有误，追加更正说明，不要随意改写历史。

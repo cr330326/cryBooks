@@ -1,28 +1,31 @@
-# Personal LLM Wiki Agent Schema
+# 个人 LLM Wiki Agent 入口
 
-This file is the agent-facing entrypoint for the personal LLM Wiki in this folder.
+这是本知识库的 agent 快速入口。完整规则以 `CLAUDE.md` 为准。
 
-Follow the full schema in `CLAUDE.md`. It defines the directory layout, page conventions, and the required workflows for:
+`CLAUDE.md` 定义了：
 
-- ingesting new raw sources into the persistent wiki,
-- answering questions from the accumulated wiki,
-- running health checks and maintenance passes.
+- 当前仓库结构；
+- wiki 页面约定；
+- 来源资料摄入流程；
+- 知识库查询流程；
+- wiki 健康检查和维护流程。
 
-## Quick Start
+## 快速开始
 
-1. Read `CLAUDE.md`.
-2. Read `wiki/index.md`.
-3. Read recent activity with:
+1. 先读 `CLAUDE.md`。
+2. 再读 `wiki/index.md`。
+3. 查看最近操作：
    `rg "^## \\[" wiki/log.md | tail -10`
-4. For new sources, start from `raw/_inbox/` unless the user names a specific file.
-5. Never modify `raw/` unless the user explicitly asks.
-6. Maintain `wiki/index.md` and `wiki/log.md` whenever wiki content changes.
+4. 新来源默认来自用户指定的顶层来源目录，例如 `计算机图书/`、`AI/`、`论文/`、`经济/`。
+5. 当前仓库没有 `raw/` 目录；不要假设来源资料在 `raw/` 下。
+6. 不要修改来源目录中的原始资料，除非用户明确要求。
+7. 只要 wiki 内容发生变化，就同步维护 `wiki/index.md` 和 `wiki/log.md`。
 
-## Agent Defaults
+## Agent 默认行为
 
-- Use `rg` for search.
-- Use Obsidian links for wiki pages: `[[Page Name]]`.
-- Cite sources with wiki page links and raw file paths.
-- Prefer small, incremental wiki edits that compound over time.
-- When uncertain, write the uncertainty down rather than hiding it.
+- 搜索优先使用 `rg`。
+- wiki 页面之间使用 Obsidian 双链：`[[页面名]]`。
+- 回答时引用 wiki 页面和来源文件路径。
+- 优先做小步、可追踪、可继续积累的 wiki 更新。
+- 不确定时，把不确定性写出来，不要假装已经证实。
 
