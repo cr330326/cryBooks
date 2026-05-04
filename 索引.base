@@ -1,0 +1,11 @@
+views:
+  - type: table
+    name: 表格
+    order:
+      - file.name
+      - file.ctime
+      - file.ext
+      - file.path
+      - file.size
+  - type: list
+    name: 视图

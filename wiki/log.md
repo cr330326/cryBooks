@@ -98,3 +98,19 @@
 - 检查到 116 个 Obsidian 双链，无断链。
 - 确认已建立页面都被 `wiki/index.md` 覆盖。
 - 新增 `wiki/health/2026-05-04-ai-deep-ingest-health-check.md`。
+
+## [2026-05-04] 摄入 | 其它目录深度摄入
+
+- 对 `其它/` 完成目录级和主题级深度摄入。
+- 确认 `其它/` 排除 `.DS_Store` 后包含 15 个可摄入文件：12 个 PDF、3 个 EPUB。
+- 使用本地 `pypdf` 统计到 11 个可读取 PDF，共 2,715 页；1 个 PDF 读取失败。
+- 新增 `wiki/sources/其它馆藏.md`、`wiki/concepts/其它.md`。
+- 新增 `wiki/syntheses/历史商业与货币史.md`、`wiki/syntheses/风水与民俗材料.md`、`wiki/syntheses/生存与灾难叙事材料.md`。
+
+## [2026-05-04] 健康检查 | 其它目录深度摄入后 Wiki 整体检查
+
+- 检查 `wiki/` 中 45 个 Markdown 页面。
+- 确认正式 wiki 页面 frontmatter 完整。
+- 检查到 143 个 Obsidian 双链，无断链。
+- 确认已建立页面都被 `wiki/index.md` 覆盖。
+- 新增 `wiki/health/2026-05-04-misc-deep-ingest-health-check.md`。
