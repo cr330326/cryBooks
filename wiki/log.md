@@ -29,3 +29,19 @@
 - 将主要 wiki 页面、模板和健康检查内容改为中文。
 - 新增 `wiki/health/2026-05-04-structure-check.md`。
 
+## [2026-05-04] 摄入 | 经济馆藏
+
+- 对 `经济/` 完成目录级摄入。
+- 确认 `经济/` 排除 `.DS_Store` 后包含 39 个可摄入文件。
+- 使用本地 `pypdf` 统计到 32 个可读取 PDF，共 11,046 页。
+- 新增 `wiki/sources/经济馆藏.md`。
+- 新增 `wiki/concepts/经济.md`。
+- 新增 `wiki/syntheses/经济学习路线.md`。
+
+## [2026-05-04] 健康检查 | Wiki 整体检查
+
+- 检查 `wiki/` 中 16 个 Markdown 页面。
+- 确认正式 wiki 页面 frontmatter 完整。
+- 检查到 25 个 Obsidian 双链，无断链。
+- 确认已建立页面都被 `wiki/index.md` 覆盖。
+- 新增 `wiki/health/2026-05-04-wiki-health-check.md`。
