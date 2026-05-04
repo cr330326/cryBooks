@@ -19,7 +19,7 @@ tags:
 - 格式：25 个 PDF、9 个 PPTX、2 个 Markdown。
 - PDF 页数扫描：本地 `pypdf` 成功读取全部 25 个 PDF，共 3,067 页。
 - PPTX 抽取：本地解析 9 个 PPTX，共 674 张幻灯片。
-- 摄入深度：本轮包含目录级摄入和核心材料深度综合。单个 PDF 的逐页笔记仍待后续按主题拆分。
+- 摄入深度：已完成目录级摄入、核心材料综合，以及 25 个 PDF 的单文件深度来源页。单个长 PDF 的逐章/逐页笔记仍可后续继续拆分。
 
 ## 一句话总结
 
@@ -47,6 +47,44 @@ tags:
 - 课程体系：`大规模语言模型：从理论到实践` 两版 PDF 和 8 章 PPT。
 - 趋势报告：`2026 Agentic Coding Trends Report.pdf`、`AI年度报告（2025-2026）`、`云器AI Agent开发技术分享20260114.pptx`。
 
+## PDF 深度来源页
+
+本轮已为 `AI/` 下 25 个 PDF 建立单文件来源页，详见 [[AI PDF深度摄入总览]]。
+
+### Agent Runtime 与工具系统
+
+- [[AI PDF - Claude Code Harness Engineering 设计指南]]
+- [[AI PDF - Claude Code 与 Codex Harness 设计哲学比较]]
+- [[AI PDF - OpenClaw 实现原理与模块拆解]]
+- [[AI PDF - ReAct Reasoning and Acting]]
+- [[AI PDF - Generative Agents 英文版]]
+- [[AI PDF - Generative Agents 中文译本]]
+- [[AI PDF - Claude Skills 构建指南 中文版]]
+- [[AI PDF - The Complete Guide to Building Skills for Claude]]
+- [[AI PDF - Hello Agents 从零构建智能体系统]]
+
+### LLM 基础、训练与模型报告
+
+- [[AI PDF - Attention Is All You Need]]
+- [[AI PDF - GPT-4 Technical Report]]
+- [[AI PDF - The Llama 3 Herd of Models]]
+- [[AI PDF - Qwen Technical Report]]
+- [[AI PDF - DeepSeek LLM Scaling Open-Source Language Models with Longtermism]]
+- [[AI PDF - DeepSeek-R1 强化学习推理模型]]
+- [[AI PDF - Apple Intelligence Foundation Language Models]]
+- [[AI PDF - Competitive Programming with Large Reasoning Models]]
+- [[AI PDF - 大语言模型 RUC AI Box]]
+- [[AI PDF - 大语言模型从理论到实践 第二版]]
+- [[AI PDF - 大规模语言模型从理论到实践 第一版]]
+
+### RAG、趋势与组织报告
+
+- [[AI PDF - GraphRAG Query-Focused Summarization]]
+- [[AI PDF - 2026 Agentic Coding Trends Report]]
+- [[AI PDF - 2026 年 AI 与数据发展预测]]
+- [[AI PDF - 2026 中国企业 AI 人才与组织发展报告]]
+- [[AI PDF - AI 年度报告 2025-2026 得到 AI 学习圈]]
+
 ## 需要更新的链接
 
 - [[AI]]
@@ -55,6 +93,7 @@ tags:
 - [[AI学习路线]]
 - [[Agent Harness与OpenClaw深度摄入]]
 - [[大语言模型论文深度摄入]]
+- [[AI PDF深度摄入总览]]
 
 ## 矛盾或张力
 
@@ -63,7 +102,6 @@ tags:
 
 ## 待解决问题
 
-- 是否先围绕 Agent Runtime 深挖，还是围绕 LLM 基础论文深挖？
-- `AI/Paper/斯坦福小镇论文.pdf` 与 `.zh-CN.pdf` 是否保留双版本，还是以中文译本作为阅读入口？
-- Claude Skills 指南是否应反向更新 `CLAUDE.md` 的技能/工作流设计？
-
+- 是否继续把 9 个 PPTX 拆成课程章节页？
+- 是否为 `AI/Article/The-Anatomy-of-an-Agent-Harness-LangChain.md` 和 `AI/Openclaw/OpenClaw 万字原理深度分析.md` 建立单文件深度来源页？
+- 是否把 25 个 PDF 来源页进一步抽象成“推理模型”“工具调用”“Agent Memory”“AI 组织转型”等概念页？
