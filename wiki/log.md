@@ -80,3 +80,21 @@
 - 检查到 77 个 Obsidian 双链，无断链。
 - 确认已建立页面都被 `wiki/index.md` 覆盖。
 - 新增 `wiki/health/2026-05-04-multi-directory-health-check.md`。
+
+## [2026-05-04] 摄入 | AI馆藏与核心材料深度摄入
+
+- 对 `AI/` 完成目录级摄入。
+- 确认 `AI/` 排除 `.DS_Store` 后包含 36 个可摄入文件：25 个 PDF、9 个 PPTX、2 个 Markdown。
+- 使用本地 `pypdf` 统计到 25 个可读取 PDF，共 3,067 页。
+- 本地解析 9 个 PPTX，共 674 张幻灯片。
+- 新增 `wiki/sources/AI馆藏.md`。
+- 新增 `wiki/concepts/AI.md`、`wiki/concepts/AI Agent Runtime.md`、`wiki/concepts/大语言模型.md`。
+- 新增 `wiki/syntheses/Agent Harness与OpenClaw深度摄入.md`、`wiki/syntheses/大语言模型论文深度摄入.md`、`wiki/syntheses/AI学习路线.md`。
+
+## [2026-05-04] 健康检查 | AI 深度摄入后 Wiki 整体检查
+
+- 检查 `wiki/` 中 39 个 Markdown 页面。
+- 确认正式 wiki 页面 frontmatter 完整。
+- 检查到 116 个 Obsidian 双链，无断链。
+- 确认已建立页面都被 `wiki/index.md` 覆盖。
+- 新增 `wiki/health/2026-05-04-ai-deep-ingest-health-check.md`。
