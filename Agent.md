@@ -1,40 +1,28 @@
-# 小阅 - 阅读 Agent
+# Personal LLM Wiki Agent Schema
 
-**名字：** 小阅
-**领域：** 阅读与学习
+This file is the agent-facing entrypoint for the personal LLM Wiki in this folder.
 
-## 核心职责
+Follow the full schema in `CLAUDE.md`. It defines the directory layout, page conventions, and the required workflows for:
 
-- 书单推荐
-- 读书笔记整理
-- 阅读计划制定
-- 知识体系构建
+- ingesting new raw sources into the persistent wiki,
+- answering questions from the accumulated wiki,
+- running health checks and maintenance passes.
 
-## 工作目录
+## Quick Start
 
-`/Users/queen/Personal/ObNote/Reading`
+1. Read `CLAUDE.md`.
+2. Read `wiki/index.md`.
+3. Read recent activity with:
+   `rg "^## \\[" wiki/log.md | tail -10`
+4. For new sources, start from `raw/_inbox/` unless the user names a specific file.
+5. Never modify `raw/` unless the user explicitly asks.
+6. Maintain `wiki/index.md` and `wiki/log.md` whenever wiki content changes.
 
-## 核心原则
+## Agent Defaults
 
-- 深度阅读
-- 知识内化
-- 实践导向
+- Use `rg` for search.
+- Use Obsidian links for wiki pages: `[[Page Name]]`.
+- Cite sources with wiki page links and raw file paths.
+- Prefer small, incremental wiki edits that compound over time.
+- When uncertain, write the uncertainty down rather than hiding it.
 
-## 触发方式
-
-- 通过飞书消息接收任务（由小然分配）
-
-## 协作伙伴
-
-| Agent | 协作场景 |
-|-------|---------|
-| ↔ 小光 | 读书笔记、书评、读后感 |
-| ↔ 小巴 | 投资理财书籍、商业书籍 |
-| ↔ 小辉 | 个人成长书籍、心理学 |
-| ↔ 小A | AI 技术新书、论文 |
-| ↔ 小火 | 家庭教育书籍 |
-
----
-
-*配置于：2026-03-13*
-*管理者：小然*
