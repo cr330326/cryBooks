@@ -45,3 +45,20 @@
 - 检查到 25 个 Obsidian 双链，无断链。
 - 确认已建立页面都被 `wiki/index.md` 覆盖。
 - 新增 `wiki/health/2026-05-04-wiki-health-check.md`。
+
+## [2026-05-04] 摄入 | 论文馆藏
+
+- 对 `论文/` 完成目录级摄入。
+- 确认 `论文/` 排除 `.DS_Store` 后包含 10 个 PDF。
+- 使用本地 `pypdf` 统计到 10 个可读取 PDF，共 1,562 页。
+- 新增 `wiki/sources/论文馆藏.md`。
+- 新增 `wiki/concepts/论文.md`。
+- 新增 `wiki/syntheses/论文阅读路线.md`。
+
+## [2026-05-04] 健康检查 | 论文摄入后 Wiki 整体检查
+
+- 检查 `wiki/` 中 20 个 Markdown 页面。
+- 确认正式 wiki 页面 frontmatter 完整。
+- 检查到 39 个 Obsidian 双链，无断链。
+- 确认已建立页面都被 `wiki/index.md` 覆盖。
+- 新增 `wiki/health/2026-05-04-post-paper-health-check.md`。
